@@ -1,6 +1,6 @@
 import React from 'react';
 import CartWidget from './CartWidget';
-
+// Creando NavBAr
 const NavBar = () => {
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light px-4">
