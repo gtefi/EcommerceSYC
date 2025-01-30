@@ -1,37 +1,27 @@
-import React from 'react';
-import CartWidget from './CartWidget';
-// Creando NavBAr
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import "../styles/NavBar.css";
+
 const NavBar = () => {
-    return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-light px-4">
-            <a className="navbar-brand" href="#">SYC</a>
-            <button
-                className="navbar-toggler"
-                type="button"
-                data-toggle="collapse"
-                data-target="#navbarNav"
-                aria-controls="navbarNav"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-            >
-                <span className="navbar-toggler-icon"></span>
-            </button>
-            <div className="collapse navbar-collapse" id="navbarNav">
-                <ul className="navbar-nav me-auto">
-                    <li className="nav-item">
-                        <a className="nav-link" href="#hombres">Hombres</a>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link" href="#mujeres">Mujeres</a>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link" href="#ofertas">Ofertas</a>
-                    </li>
-                </ul>
-                <CartWidget />
-            </div>
-        </nav>
-    );
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  return (
+    <nav className="navbar">
+      <div className="nav-logo">SYC</div>
+      <div className={`nav-links ${menuOpen ? "open" : ""}`}>
+        <Link to="/">Inicio</Link>
+        <Link to="/products">Productos</Link>
+        <Link to="/faq">Preguntas Frecuentes</Link>
+        <Link to="/contact">Contacto</Link>
+      </div>
+      <div className="cart-icon">
+        🛒 <span>(0)</span>
+      </div>
+      <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
+        ☰
+      </button>
+    </nav>
+  );
 };
 
 export default NavBar;

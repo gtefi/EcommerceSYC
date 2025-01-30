@@ -1,0 +1,44 @@
+.carousel {
+    width: 80%;
+    margin: 20px auto;
+    overflow: hidden;
+  }
+  
+  .carousel-item {
+    text-align: center;
+    padding: 10px;
+  }
+  
+  .carousel-item img {
+    width: 100%;
+    height: auto;
+    max-height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  .slick-prev,
+  .slick-next {
+    font-size: 20px;
+    color: black;
+    z-index: 1000;
+  }
+  
+  .slick-prev:hover,
+  .slick-next:hover {
+    color: gray;
+  }
+  
+  .slick-dots {
+    bottom: 10px;
+  }
+  
+  .slick-dots li button:before {
+    font-size: 10px;
+    color: black;
+  }
+  
+  .slick-dots li.slick-active button:before {
+    color: gray;
+  }
+  
